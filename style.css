@@ -219,7 +219,7 @@ transition: 0.3s ease background-color;
     transition: 0.5s ease left;
 }
 
-#headerc.nav-list ul.active{
+#header .nav-list ul.active{
     left: 0%;
 }
 
@@ -387,6 +387,7 @@ transition: 0.3s ease background-color;
     text-align: center;
     max-width: 1500px;
     margin: 0 auto;
+    padding: 100px 0;
 }
 
 #service .service-top{
@@ -438,10 +439,8 @@ transition: 0.3s ease background-color;
 }
 
 #service .service-item p{
-    color: white;
-    text-align: left;
     font-size: 1.8rem;
-} */
+}
 
 
 
@@ -454,7 +453,7 @@ transition: 0.3s ease background-color;
     flex-direction: column; 
     text-align: center;
     max-width: 1200px; 
-    margin-top: 50px;
+    margin: 0 auto;
     padding: 100px 0;
 }
 
@@ -476,19 +475,64 @@ transition: 0.3s ease background-color;
     align-items: center; 
     justify-content: center; 
     flex-direction: column; 
-    width: 100%; 
+    width: 80%; 
     margin: 20px auto; 
-    overflow: hidden; 
-
+    overflow: hidden;
+    border-radius: 10px;
 
 } 
 
 #projects .project-info{ 
     padding: 30px; 
     flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #acb9c6;
 }
 
+#projects .project-info h2{
+    font-size: 3rem;
+    font-weight: 500;
+}
 
+#projects .project-info h3{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#projects .project-info p{
+    color: black;
+    text-align: left;
+}
+
+#projects .project-img{
+    flex-basis: 50%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+#projects .project-img:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-image:  linear-gradient(60deg, #29323c, #485563 100%);
+    opacity: 0.5;
+}
+
+#projects .project-img img{
+    transition: 0.3 ease transform;
+}
+
+#projects .project-item:hover .project-img{
+    transform: scale(1.1);
+}
 
 
 
@@ -567,12 +611,16 @@ transition: 0.3s ease background-color;
 #footer h1{
     color: white;
     font-weight: 500;
-    font-size: 1.8rem;
+    font-size: 3rem;
     letter-spacing: 0.1rem;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
+#footer h2{
+    font-size: 2rem;
+
+}
 #footer p{
     color: white;
     font-size: 1.3rem;
@@ -604,7 +652,7 @@ transition: 0.3s ease background-color;
     }
 }
 
-/* 
+
 @keyframes hamburger_puls{
     0%{
         opacity: 1;
@@ -616,7 +664,7 @@ transition: 0.3s ease background-color;
     }
 }
 
-
+ /* This id for the media query */
 @media only screen and (min-width: 768px){
     .cta{
         font-size: 2.5rem;
@@ -667,6 +715,89 @@ transition: 0.3s ease background-color;
     #about .col-left{
         width: 600px;
         height: 400px;
+        padding-left: 60px;
+    }
+
+    #about .col-left .about-img::after{
+        left: -45px;
+        top: 34px;
+        height: 98%;
+        width: 98%;
+        border: 10px solid crimson;
+    }
+
+    #about .col-right{
+        text-align: left;
+        padding: 30px;
+    }
+
+    #about .col-right h1{
+        text-align: left;
+    }
+
+
+
+    #contact .contact{
+        flex-direction: column;
+        padding: 100px 0;
+        align-items: center;
+        justify-content: center;
+        min-width: 20vh;
+    }
+
+    #contact .contact-item{
+        width: 100%;
+        margin: 5px;
+        flex-direction: row;
+    }
+
+    #contact .contact-items{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+
+    #contact .contact-info{
+        width: 100%;
+        text-align: left;
+        padding-left: 20px;
+
     }
 }
-     */
+
+
+@media only screen and (min-width: 1200px){
+    #header .hamburger{
+        display: no;
+    }
+
+    /* #header .nav-list{
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+    } */
+
+    #header .nav-list ul li{
+        display: inline-block;
+    }
+
+    #header .nav-list ul li a{
+        font-size: 1.5rem;
+    }
+
+    #header .nav ul li a::after{
+        display: none;
+    }
+
+
+    #service .service-bottom .service-item{
+        flex-basis: 25%;
+        margin: 1.5%;
+    }
+}
+
+    
